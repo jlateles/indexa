@@ -9,7 +9,8 @@ import { RouterOutlet } from '@angular/router';
 import { CabecalhoComponent } from './componentes/cabecalho/cabecalho.component';
 import { SeparadorComponent } from './componentes/separador/separador.component';
 import { ContatoComponent } from './componentes/contato/contato.component';
-import { FormsModule } from '@angular/forms';
+import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormularioComponent } from './paginas/formulario/formulario.component';
 
 @NgModule({
   declarations: [
@@ -17,14 +18,17 @@ import { FormsModule } from '@angular/forms';
     ContainerComponent,
     CabecalhoComponent,
     SeparadorComponent,
-    ContatoComponent
+    ContatoComponent,
+    FormularioComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CommonModule,
     RouterOutlet,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
