@@ -9,6 +9,7 @@ import { RouterOutlet } from '@angular/router';
 import { CabecalhoComponent } from './componentes/cabecalho/cabecalho.component';
 import { SeparadorComponent } from './componentes/separador/separador.component';
 import { ContatoComponent } from './componentes/contato/contato.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ContatoComponent } from './componentes/contato/contato.component';
     BrowserModule,
     AppRoutingModule,
     CommonModule,
-    RouterOutlet
+    RouterOutlet,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
