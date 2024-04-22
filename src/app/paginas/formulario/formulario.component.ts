@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-formulario',
@@ -12,17 +12,21 @@ export class FormularioComponent {
 
   constructor(){
     this.contatoForm = new FormGroup({
-      nome: new FormControl('Bia'),
-      telefone: new FormControl('973644513'),
-      email: new FormControl('bia@gmail.com'),
-      aniversario: new FormControl(''),
+      nome: new FormControl('', Validators.required),
+      telefone: new FormControl('', [Validators.required,  Validators.minLength(9)]),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      aniversario: new FormControl('', Validators.required),
       redes: new FormControl(''),
       observacoes: new FormControl('')
     })
   }
 
   salvarContato(){
-    console.log(this.contatoForm.value);
+    if (this.contatoForm.valid) {
+      console.log(this.contatoForm.value);
+
+    }
+
   }
 
   cancelar(){
