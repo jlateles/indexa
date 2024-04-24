@@ -5,12 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ContainerComponent } from './componentes/container/container.component';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { CabecalhoComponent } from './componentes/cabecalho/cabecalho.component';
 import { SeparadorComponent } from './componentes/separador/separador.component';
 import { ContatoComponent } from './componentes/contato/contato.component';
 import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormularioComponent } from './paginas/formulario/formulario.component';
+import { ListaContatosComponent } from './paginas/lista-contatos/lista-contatos.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,9 @@ import { FormularioComponent } from './paginas/formulario/formulario.component';
     CabecalhoComponent,
     SeparadorComponent,
     ContatoComponent,
-    FormularioComponent
+    FormularioComponent,
+    ListaContatosComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,8 @@ import { FormularioComponent } from './paginas/formulario/formulario.component';
     RouterOutlet,
     FormsModule,
     ReactiveFormsModule,
-
+    RouterOutlet,
+    RouterLink
   ],
   providers: [],
   bootstrap: [AppComponent]
