@@ -1,14 +1,11 @@
+import { ContatosService } from './../../services/contatos.service';
 import { Component } from '@angular/core';
-
 
 interface Contato {
   id: number
   nome: string
   telefone: string
 }
-
-import agenda from '../../agenda.json'
-
 @Component({
   selector: 'app-lista-contatos',
   templateUrl: './lista-contatos.component.html',
@@ -16,9 +13,14 @@ import agenda from '../../agenda.json'
 })
 export class ListaContatosComponent {
   alfabeto: string = 'abcdefghijklmnopqrstuvwxyz'
-  contatos: Contato[] = agenda;
+  contatos: Contato[] = [];
 
   filtroPorTexto: string = '';
+  ContatosService: any;
+
+  constructor(ContatosService: ContatosService){
+    this.contatos = this.ContatosService.obterContatos()
+  }
 
   // Remove os acentos de uma string
   private removerAcentos(texto: string): string {
