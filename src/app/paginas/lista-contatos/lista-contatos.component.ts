@@ -18,8 +18,8 @@ export class ListaContatosComponent {
   filtroPorTexto: string = '';
   ContatosService: any;
 
-  constructor(ContatosService: ContatosService){
-    this.contatos = this.ContatosService.obterContatos()
+  constructor(private contatosService: ContatosService){
+    this.contatos = this.contatosService.obterContatos()
   }
 
   // Remove os acentos de uma string
