@@ -27,13 +27,13 @@ export class ContatosService {
     const contatosLocalStorageString = localStorage.getItem('contatos');
     const  contatosLocalStorage =  contatosLocalStorageString ? JSON.parse(contatosLocalStorageString) : null; //convertendo de string para objetos
 
-    this.contatos = contatosLocalStorage || null;
+    this.contatos = contatosLocalStorage || this.contatos;
 
     // salvar os contatos no localStorage
     localStorage.setItem('contatos', JSON.stringify(this.contatos));
   }
 
-  obterContatos(){
+  obterContatos(): Contato[]{
     return this.contatos;
   }
 }
