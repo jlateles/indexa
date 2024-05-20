@@ -22,51 +22,18 @@ export class ContatosService {
     {"id": 28, "nome": "Natália", "telefone": "71 100450583"},
   ]
 
- // constructor() {
+  constructor() {
     //tentar obter os dados do localStorage
- //   const contatosLocalStorageString = localStorage.getItem('contatos');
-  //  const  contatosLocalStorage =  contatosLocalStorageString ? JSON.parse(contatosLocalStorageString) : null; //convertendo de string para objetos
+    const contatosLocalStorageString = localStorage.getItem('contatos');
+    const  contatosLocalStorage =  contatosLocalStorageString ? JSON.parse(contatosLocalStorageString) : null; //convertendo de string para objetos
 
-<<<<<<< HEAD
-  //  this.contatos = contatosLocalStorage || this.contatos;
-=======
     this.contatos = contatosLocalStorage || this.contatos;
->>>>>>> c8396f1e94b50a73a03ae0c734beed205dcfc2c3
 
     // salvar os contatos no localStorage
-  //  localStorage.setItem('contatos', JSON.stringify(this.contatos));
- // }
+    localStorage.setItem('contatos', JSON.stringify(this.contatos));
+  }
 
- // obterContatos(){
- //   return this.contatos;
- // }
- constructor() {
-
-  //Salvar contatos no local storage
-  this.SalvarContosNoLocalStorage();
-
-  //Tentar obter os dados do local storage
-  this.ObtemContatosDoLocalStorage();
-}
-
-private SalvarContosNoLocalStorage() {
-  localStorage.setItem('contatos', JSON.stringify(this.contatos));
-}
-
-private ObtemContatosDoLocalStorage() {
-  const contatosLocalStorageString = localStorage.getItem('contatos');
-  const contatosLocalStorage = contatosLocalStorageString ? JSON.parse(contatosLocalStorageString) : null;
-  this.contatos = contatosLocalStorage ||  this.contatos ;
-}
-
-obterContatos(){
-  return this.contatos
-}
-
-<<<<<<< HEAD
-=======
   obterContatos(): Contato[]{
     return this.contatos;
   }
->>>>>>> c8396f1e94b50a73a03ae0c734beed205dcfc2c3
 }
