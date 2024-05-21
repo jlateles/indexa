@@ -1,24 +1,22 @@
+import { Contato } from '../../componentes/contato/contato';
 import { ContatosService } from './../../services/contatos.service';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-interface Contato {
-  id: number
-  nome: string
-  telefone: string
-}
 @Component({
   selector: 'app-lista-contatos',
   templateUrl: './lista-contatos.component.html',
   styleUrl: './lista-contatos.component.css'
 })
-export class ListaContatosComponent {
+export class ListaContatosComponent implements OnInit {
   alfabeto: string = 'abcdefghijklmnopqrstuvwxyz'
   contatos: Contato[] = [];
 
   filtroPorTexto: string = '';
   ContatosService: any;
 
-  constructor(private contatosService: ContatosService){
+  constructor(private contatosService: ContatosService){}
+
+  ngOnInit(){
     this.contatos = this.contatosService.obterContatos()
   }
 
