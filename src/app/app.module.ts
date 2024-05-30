@@ -12,6 +12,7 @@ import { ContatoComponent } from './componentes/contato/contato.component';
 import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormularioComponent } from './paginas/formulario/formulario.component';
 import { ListaContatosComponent } from './paginas/lista-contatos/lista-contatos.component';
+import { provideHttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,9 @@ import { ListaContatosComponent } from './paginas/lista-contatos/lista-contatos.
     RouterOutlet,
     RouterLink
   ],
-  providers: [],
+  providers: [
+    provideHttpClient()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
