@@ -86,7 +86,7 @@
     ></textarea>
 
     <section class="botoes">
-      <button (click)="cancelar()" class="botao-cancelar" type="submit">Cancelar</button>
+      <button (click)="cancelar()" class="botao-cancelar" type="button">Cancelar</button>
       <button
       [disabled]="contatoForm.invalid"
       [ngClass]="contatoForm.valid ? 'botao-salvar' : 'botao-desabilitado'"

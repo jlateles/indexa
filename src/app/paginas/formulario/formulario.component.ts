@@ -2,7 +2,6 @@ import { ContatosService } from './../../services/contatos.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router} from '@angular/router';
-
 @Component({
   selector: 'app-formulario',
   templateUrl: './formulario.component.html',
@@ -25,7 +24,7 @@ export class FormularioComponent implements OnInit {
       nome: new FormControl('', Validators.required),
       telefone: new FormControl('', [Validators.required,  Validators.minLength(9)]),
       email: new FormControl('', [Validators.required, Validators.email]),
-      aniversario: new FormControl('', Validators.required),
+      aniversario: new FormControl(''),
       redes: new FormControl(''),
       observacoes: new FormControl('')
     })
