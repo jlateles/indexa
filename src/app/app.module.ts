@@ -13,6 +13,7 @@ import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormularioComponent } from './paginas/formulario/formulario.component';
 import { ListaContatosComponent } from './paginas/lista-contatos/lista-contatos.component';
 import { provideHttpClient } from '@angular/common/http';
+import { PerfilContatoComponent } from './paginas/perfil-contato/perfil-contato.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { provideHttpClient } from '@angular/common/http';
     ContatoComponent,
     FormularioComponent,
     ListaContatosComponent,
+    PerfilContatoComponent,
 
   ],
   imports: [
