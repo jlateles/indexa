@@ -1,6 +1,7 @@
+import { ContatosService } from './../../services/contatos.service';
 import { Component, OnInit } from '@angular/core';
 import { Contato } from '../../componentes/contato/contato';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-perfil-contato',
@@ -18,10 +19,22 @@ export class PerfilContatoComponent implements OnInit{
     redes: ''
   }
 
-  constructor(private activateRoute: ActivatedRoute) {}
+  constructor(private activateRoute: ActivatedRoute,
+    private ContatosService: ContatosService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
-    this.activateRoute.snapshot.paramMap.get('id')
+   const id = this.activateRoute.snapshot.paramMap.get('id');
+    this.ContatosService.buscarPorId(parseInt(id!)).subscribe((contato) => {
+      this.contato = contato
+    })
+  }
+
+  excluir(){
+    this.ContatosService.excluirContato(this.contato.id).subscribe((contato) => {
+      this.router.navigateByUrl('/lista-contatos')
+    })
   }
 
 }
