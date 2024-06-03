@@ -1,25 +1,25 @@
 {
   "contatos": [
     {
-      "nome": "Maria",
+      "nome": "Maria Castro",
       "telefone": "(93) 92167-9467",
       "email": "maria@email.com",
-      "aniversario": "01/06/2002",
+      "aniversario": "30/04/2002",
       "redes": "",
       "observacoes": "",
       "id": 1
     },
     {
-      "nome": "Diego",
+      "nome": "Diego Haland",
       "telefone": "(82) 93635-9369",
       "email": "diego@email.com",
-      "aniversario": "06/01/1997",
-      "redes": "",
+      "aniversario": "31/05/1997",
+      "redes": "haland.di",
       "observacoes": "",
       "id": 2
     },
     {
-      "nome": "Thamires",
+      "nome": "Thamires Lino",
       "telefone": "(11) 976438900",
       "email": "thamires@email.com",
       "aniversario": "",
@@ -28,22 +28,31 @@
       "id": 3
     },
     {
-      "nome": "Victória",
+      "nome": "Vitor Oliveira",
       "telefone": "(84) 93771-2646",
-      "email": "victoria@uorak.com",
-      "aniversario": "11/09/2002",
-      "redes": "@vicvictoria",
+      "email": "vitor@uorak.com",
+      "aniversario": "10/08/2002",
+      "redes": "@vitor.vitor",
       "observacoes": "",
       "id": 4
     },
     {
-      "nome": "Henrique",
-      "telefone": "(24) 93948-1355",
-      "email": "henrique@email.org",
+      "nome": "Henrique Passos",
+      "telefone": "(34) 92385-2624",
+      "email": "henrique@nry.com",
       "aniversario": "23/11/1994",
-      "redes": "henrique.orgs",
+      "redes": "passos.henrique",
       "observacoes": "",
       "id": 5
+    },
+    {
+      "nome": "Beatriz Alves",
+      "telefone": "(68) 92275-7033",
+      "email": "beatriz@vnjp.org",
+      "aniversario": "27/03/2001",
+      "redes": "beatriz.alves",
+      "observacoes": "",
+      "id": 6
     }
   ]
 }
