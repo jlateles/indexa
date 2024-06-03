@@ -1,5 +1,5 @@
 import { ContatosService } from './../../services/contatos.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Contato } from '../../componentes/contato/contato';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 
@@ -9,6 +9,7 @@ import { ActivatedRoute, Route, Router } from '@angular/router';
   styleUrl: './perfil-contato.component.css'
 })
 export class PerfilContatoComponent implements OnInit{
+
 
   contato: Contato = {
     id: 0,
