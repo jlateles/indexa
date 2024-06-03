@@ -1,7 +1,8 @@
 import { ContatosService } from './../../services/contatos.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router} from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { format } from 'date-fns';
 @Component({
   selector: 'app-formulario',
   templateUrl: './formulario.component.html',
@@ -11,13 +12,18 @@ export class FormularioComponent implements OnInit {
 
   contatoForm!: FormGroup;
 
+
   constructor(private ContatosService: ContatosService,
-    private router: Router
+    private router: Router,
+    private activatedRoute: ActivatedRoute
   ){}
 
   ngOnInit(){
     this.inicializarFormulario();
+    this.carregarContato();
+
   }
+
 
   inicializarFormulario(){
     this.contatoForm = new FormGroup({
@@ -30,9 +36,29 @@ export class FormularioComponent implements OnInit {
     })
   }
 
+  carregarContato() {
+    const id = this.activatedRoute.snapshot.paramMap.get('id');
+    this.ContatosService.buscarPorId(parseInt(id!)).subscribe((contato) => {
+      // Se a data de aniversário existir, formate-a
+      if (contato.aniversario) {
+        contato.aniversario = format(new Date(contato.aniversario), 'yyyy-MM-dd');
+      }
+      this.contatoForm.patchValue(contato)
+    })
+  }
+
   salvarContato(){
     const novoContato = this.contatoForm.value;
-    this.ContatosService.salvarContato(novoContato).subscribe(() => {
+
+    // Formatando a data de aniversário para o formato dd/MM/yyyy antes de salvar
+    if (novoContato.aniversario) {
+      novoContato.aniversario = format(new Date(novoContato.aniversario), 'dd/MM/yyyy');
+    }
+
+    const id = this.activatedRoute.snapshot.paramMap.get('id');
+    novoContato.id = id ? parseInt(id) : null
+
+    this.ContatosService.editarOuSalvarContato(novoContato).subscribe(() => {
       this.contatoForm.reset();
       this.router.navigateByUrl('/lista-contatos')
     });

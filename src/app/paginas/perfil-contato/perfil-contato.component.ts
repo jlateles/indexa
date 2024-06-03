@@ -19,13 +19,13 @@ export class PerfilContatoComponent implements OnInit{
     redes: ''
   }
 
-  constructor(private activateRoute: ActivatedRoute,
+  constructor(private activatedRoute: ActivatedRoute,
     private ContatosService: ContatosService,
     private router: Router
   ) {}
 
   ngOnInit() {
-   const id = this.activateRoute.snapshot.paramMap.get('id');
+   const id = this.activatedRoute.snapshot.paramMap.get('id');
     this.ContatosService.buscarPorId(parseInt(id!)).subscribe((contato) => {
       this.contato = contato
     })

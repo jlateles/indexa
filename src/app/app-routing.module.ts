@@ -10,6 +10,10 @@ const routes: Routes = [
       component: FormularioComponent
     },
     {
+      path: 'formulario/:id',
+      component: FormularioComponent
+    },
+    {
       path: 'lista-contatos',
       component: ListaContatosComponent
     },
