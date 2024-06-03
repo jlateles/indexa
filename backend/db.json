@@ -2,7 +2,7 @@
   "contatos": [
     {
       "nome": "Maria",
-      "telefone": "99 99999999",
+      "telefone": "(93) 92167-9467",
       "email": "maria@email.com",
       "aniversario": "01/06/2002",
       "redes": "",
@@ -11,7 +11,7 @@
     },
     {
       "nome": "Diego",
-      "telefone": "88 88888888",
+      "telefone": "(82) 93635-9369",
       "email": "diego@email.com",
       "aniversario": "06/01/1997",
       "redes": "",
@@ -20,12 +20,21 @@
     },
     {
       "nome": "Thamires",
-      "telefone": "11976438900",
+      "telefone": "(11) 976438900",
       "email": "thamires@email.com",
       "aniversario": "",
       "redes": "",
       "observacoes": "",
       "id": 3
+    },
+    {
+      "nome": "Julia",
+      "telefone": "(63) 92420-8872",
+      "email": "julia@hotmail.com",
+      "aniversario": "2000-06-22",
+      "redes": "",
+      "observacoes": "",
+      "id": 4
     }
   ]
 }
